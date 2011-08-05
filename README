@@ -5,7 +5,7 @@ NAME
 	
 DESCRIPTION
 
-	A simple example of key boards shortcuts implementation with javaScript.
+    A simple example of key boards shortcuts implementation with javaScript.
 
     This project has no intention to be a complex implementation of binding
     javaScript events. The ideia became from the wrong speechs on the internet
