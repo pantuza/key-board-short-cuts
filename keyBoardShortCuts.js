@@ -15,7 +15,6 @@ var keyBoardShortCuts = (function(){
        'left' : false,
        'right': false
     }
-    window.gust=keys;
 
     /*
     * That is the main function of the nameSpace. It is the 'remote control' 
@@ -55,7 +54,7 @@ var keyBoardShortCuts = (function(){
     */
     window.addEventListener('keydown',function(e){
        
-       //console.log("down : " + e.keyCode);
+       // console.log("down : " + e.keyCode);
        
        if(e.keyCode == 17)
             keys.ctrl=true;
@@ -83,7 +82,7 @@ var keyBoardShortCuts = (function(){
     */
     window.addEventListener('keyup',function(e){
        
-       //console.log("up   : " + e.keyCode);
+       // console.log("up   : " + e.keyCode);
 
        if(e.keyCode == 17 )
            keys.ctrl=false;
@@ -101,4 +100,4 @@ var keyBoardShortCuts = (function(){
        return false;
     });
 
-})(); 
+})();
