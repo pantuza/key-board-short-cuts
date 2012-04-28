@@ -9,95 +9,95 @@
 */
 var keyBoardShortCuts = (function(){
 
-/*Possibles commands to bind*/
+	/* Possibles commands to bind */
     var keys = {
        'ctrl' : false,
        'left' : false,
        'right': false
-    }
+    },
+    /* Key Codes */
+    CTRL 	= 17,
+    LEFT 	= 37,
+    RIGHT	= 39,
+    
+    element,
 
     /*
     * That is the main function of the nameSpace. It is the 'remote control' 
     * that controls and verify which keys are pressed. Based on these keys, 
-    * could trigger any other action.
+    * could trigger any action. In this case, changes the element style.
     */
-    function remoteControl(){
+    remoteControl = function(window){
 
-          if( keys.ctrl && keys.left ){
+          if( keys.ctrl && keys.left )
+              element.style.left = "-10%";
           
-              // get the string keys of the object 'keys'
-              strCtrl = Object.keys( keys )[0];
-              strLeft = Object.keys( keys )[1];
-              
-              // show a console message 
-              console.log( '<<<< - ' + strCtrl + '+' + strLeft );
-          
-          }else if( keys.ctrl && keys.right ){          
-              // get the string keys of the object 'keys'
-              strCtrl  = Object.keys( keys )[0];
-              strRight = Object.keys( keys )[2];
-    
-              // show a console message 
-              console.log( '>>>> - ' + strCtrl + '+' + strRight );
-              
-          } else{
-              return false;
-          }
-    }
-
+          else if( keys.ctrl && keys.right )
+              element.style.left = "+10%";
+    },
     /* 
-    * Bind on the 'keydown' event. Each key pressed will trigger these event
-    * that verify the key code pressed. If the key code matchs one of the
-    * codes below, it will set true for the key defined on the keys object.
+    * Each key pressed will trigger these event that verify the key code 
+    * pressed. If the key code matchs one of the codes below, it will set 
+    * true for the key defined on the keys object.
     * Then call the 'remoteControl' function that verify the bind keys for
     * execute something.
-    */
-    window.addEventListener('keydown',function(e){
+    */    
+    keyDownEventFunction = function(event){
        
-       // console.log("down : " + e.keyCode);
+       if( event.keyCode == CTRL )
+            keys.ctrl = true;
        
-       if(e.keyCode == 17)
-            keys.ctrl=true;
+       else if( event.keyCode == LEFT )
+            keys.left = true;
        
-       else if( e.keyCode == 37 )
-            keys.left=true;
-       
-       else if( e.keyCode == 39 )
-            keys.right=true;
+       else if( event.keyCode == RIGHT )
+            keys.right = true;
        
        else
             return false;
        
-       // Verify bind keys for some execution
-       remoteControl();
-       return false;
-
-    });
-
-    /*
-    * These listener event is similar to the defined above. The difference is
-    * that these one verify when the key is up (not pressed more). For the same
-    * reasons, it changes the keys values on the 'keys' object. Then, call the
-    * 'remoteControl' function again.
-    */
-    window.addEventListener('keyup',function(e){
        
-       // console.log("up   : " + e.keyCode);
-
-       if(e.keyCode == 17 )
+       remoteControl();
+       
+       event.preventDefault();
+       event.stopPropagation();
+    },
+    /*
+    * Verify when the key is up (not pressed more). For the same
+    * reasons, it changes the keys values on the 'keys' object. Then, 
+    * call the 'remoteControl' function again.
+    */
+    keyUpEventFunction = function(event){
+       
+       if( event.keyCode == CTRL )
            keys.ctrl=false;
        
-       else if( e.keyCode == 37 )
+       else if( event.keyCode == LEFT )
             keys.left=false;
        
-       else if( e.keyCode == 39 )
+       else if( event.keyCode == RIGHT )
             keys.right=false;
        
        else
             return false;
-       // Verify bind keys for some execution
+       
        remoteControl();
-       return false;
-    });
+       
+       event.preventDefault();
+       event.stopPropagation();
+    };
+    
+    /**
+     * Waits the 'on ready' of the documento to set variables
+     */
+	window.onload = function(){
+		element = document.getElementById('square');
+	}
 
-})();
+	/**
+	 * Key board event binds
+	 */
+    window.addEventListener('keydown'	, keyDownEventFunction	);
+    window.addEventListener('keyup'		, keyUpEventFunction	);
+
+})(window);

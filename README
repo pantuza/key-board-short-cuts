@@ -17,12 +17,11 @@ DESCRIPTION
 
 USAGE
 
-    For a simple view test, copy the content of the 'keyBoardShortCuts.js' 
-    file and paste it in the developer tool javaScript console on the browser.
-    Then execute it. 
-
+    For a simple view test, access http://pantuza.com/key-board-short-cuts/ or
+    clone this repository and open the 'example.html' file in a web browser. 
+    
         Press 'ctrl' + 'left-arrow'    or,
-              'ctrl' + 'right-arrow' to see the output console message.
+              'ctrl' + 'right-arrow' to see the key board short cuts.
 
 AUTHOR
 	Written by Gustavo Pantuza
