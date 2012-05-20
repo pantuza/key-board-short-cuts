@@ -16,8 +16,7 @@
     creativity.  
 
 ### USAGE
-        &nbsp;&nbsp;&nbsp;&nbsp;For a simple view test, access 
-    [ project site] (http://pantuza.com/key-board-short-cuts/) or
+        For a simple view test, access [ project site] (http://pantuza.com/key-board-short-cuts/) or
     clone this repository and open the 'example.html' file in a web browser.
     
         Press 'ctrl' + 'left-arrow'    or,
