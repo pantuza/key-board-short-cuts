@@ -16,9 +16,9 @@
     creativity.  
 
 ### USAGE
-
-        For a simple view test, access http://pantuza.com/key-board-short-cuts/ or
-    clone this repository and open the 'example.html' file in a web browser. 
+        &nbsp;&nbsp;&nbsp;&nbsp;For a simple view test, access 
+    [ project site] (http://pantuza.com/key-board-short-cuts/) or
+    clone this repository and open the 'example.html' file in a web browser.
     
         Press 'ctrl' + 'left-arrow'    or,
               'ctrl' + 'right-arrow' to see the key board short cuts.
