@@ -16,12 +16,13 @@
     creativity.  
 
 ### USAGE
-        For a simple view test, access [ project site] (http://pantuza.com/key-board-short-cuts/) or
-    clone this repository and open the 'example.html' file in a web browser.
+<pre>
+    For a simple view test, access the <a href="http://pantuza.com/key-board-short-cuts/" target="_blank">project site</a> or
+clone this repository and open the 'example.html' file in a web browser.
     
-        Press 'ctrl' + 'left-arrow'    or,
-              'ctrl' + 'right-arrow' to see the key board short cuts.
-
+Press 'ctrl' + 'left-arrow'    or,
+      'ctrl' + 'right-arrow' to see the key board short cuts.
+</pre>
 ### AUTHOR
 > ###### Written by Gustavo Pantuza
 
